@@ -1,0 +1,324 @@
+@font-face{
+	font-family: 'Mulish-Bold';
+	src: url('../fonts/Mulish/Mulish-Black.ttf') format('truetype'),
+		 url('../fonts/Mulish/Mulish-Bold.ttf') format('truetype'),
+         url('../fonts/Mulish/Mulish-ExtraBold.ttf') format('truetype'),
+         url('../fonts/Mulish/Mulish-SemiBold.ttf') format('truetype'),
+}
+@font-face{
+	font-family: 'Mulish-Light';
+	src: url('../fonts/Mulish/Mulish-Light.ttf') format('truetype'),
+		 url('../fonts/Mulish/Mulish-Medium.ttf') format('truetype'),
+         url('../fonts/Mulish/Mulish-ExtraBold.ttf') format('truetype'),
+         url('../fonts/Mulish/Mulish-Regular.ttf') format('truetype'), 
+}
+html{
+    font-size: 10px;
+    font-family: 'Mulish-Light';
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+body{
+    margin: 0 auto;
+}
+.wrap{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.wraper{
+    margin: 0 auto;
+    display: flex;
+    /* color: rgb(37, 38, 42); */
+}
+
+/* header */
+
+.sidebar_menu{
+    width: 300px;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    right: -310px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    transition: right .8s ease-in-out;
+    box-shadow: 4px 0px 20px 5px rgba(0, 0, 0, 0.3);
+    
+    .close_bar_navigation_btn{
+        font-size: 2.5rem;
+        padding: 2rem 3rem;
+        cursor: pointer;
+        color: rgb(152, 152, 152);
+        align-self: flex-end;
+    }
+    .btn_hover{
+        color: rgb(37, 38, 42);
+    }
+    .item_hover{
+        color: rgb(242, 58, 46);
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 80%;
+    }
+    ul > li {
+        width: 100%;
+    }
+
+    ul > li > a{
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: rgb(0, 0, 0);
+        font-size: 1.8rem;
+        padding: 1rem 0 1rem 1rem;
+        width: 100%;
+    }
+    li .active {
+        color: rgb(242, 58, 46);
+        box-sizing: border-box;
+        
+    }
+}
+
+.header_navigation{
+    background: transparent;
+    font-size: 2rem;
+    position: fixed;
+    width: 100%;
+
+    .wraper{
+        justify-content: space-between;
+        padding: 2rem 0 1rem 0;
+    }
+    .bar_navigation_btn{
+        cursor: pointer;
+        color:rgb(255, 255, 255);
+    }
+
+    .item_hover{
+        color: rgb(255, 255, 255);
+    }
+
+    ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li a {
+        display: block;
+        padding: 0 1rem 1rem 1rem;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: rgb(255, 255, 255);
+    }
+    .active  {
+        box-sizing: border-box;
+        border-bottom: .1em solid rgb(255, 255, 255);
+    }
+} 
+
+.header_navigation_colored{
+    background-color: #fff;
+    box-shadow: 4px 0px 20px -5px rgba(0, 0, 0, 0.2);
+    transition: background-color .8s ease-in-out;
+    li a {
+        color:rgb(0, 0, 0);
+    }
+    
+    .item_hover{
+        color: rgb(242, 58, 46);
+    }
+    li .active{
+        box-sizing: border-box;
+        border-bottom: .1em solid rgb(242, 58, 46);
+    }
+    .logo > a{
+        color:rgb(0, 0, 0);
+    }
+    .bar_navigation_btn{
+        color:rgb(0, 0, 0);
+    }
+}
+
+.logo > a{
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Mulish-Bold';
+    color: rgb(255, 255, 255);
+}
+
+/* main */
+
+.main_wrap{
+    background: rgb(0, 0, 238);
+    height: 3000px;
+    width: 100%;
+}
+
+/* footer */
+
+.footer_navigation{
+    font-size: 1.8rem;
+    min-width: 10%;
+
+    .wraper{
+        background: transparent;
+        height: 300px;
+        justify-content: flex-end;
+    }
+    .footer_shedule,
+    .footer_nav{
+        width: 20%;
+    }
+
+    .footer_about{
+        width: 60%;
+    }
+
+    h4{
+        font-family: 'Mulish-Bold';
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+    }
+    
+    .item_hover{
+        color: rgb(199, 24, 12);
+    }
+    
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul > li > a{
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: rgb(242, 58, 46);
+        padding: 0 0 1rem 0;
+    }
+
+}
+
+/* adaptiv */
+
+@media (min-width: 1401px){
+    .wraper{
+        float: none;
+        width: 1200px;
+    }
+    .bar_navigation_btn{
+        display: none;
+    }
+}
+@media (min-width: 1201px) and (max-width: 1400px){
+    .wraper{
+        float: none;
+        width: 1200px;
+    }
+    .bar_navigation_btn{
+        display: none;
+    }
+}
+@media (min-width: 993px) and (max-width: 1200px){
+    .wraper{
+        float: none;
+        width: 93%;
+    }
+    .bar_navigation_btn{
+        display: none;
+    }
+}
+@media (min-width: 767px) and (max-width: 992px){
+    .wraper{
+        float: none;
+        width: 85%;
+    }
+    .main_nav{
+        display: none;
+    }
+    .bar_navigation_btn{
+        display: block;
+    }
+    .footer_navigation{
+        .wraper{
+            flex-direction: column;
+            height: auto;
+            width: 85%;
+        }
+        .footer_shedule,
+        .footer_nav,
+        .footer_about{
+            width: 100%;
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 768px){
+    .wraper{
+        float: none;
+        width: 90%;
+    }
+    .main_nav{
+        display: none;
+    }
+    .bar_navigation_btn{
+        display: block;
+    }
+    .footer_navigation{
+        .wraper{
+            flex-direction: column;
+            height: auto;
+            width: 85%;
+        }
+        .footer_shedule,
+        .footer_nav,
+        .footer_about{
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 575px){
+    .wraper{
+        float: none;
+        width: 90%;
+    }
+    .main_nav{
+        display: none;
+    }
+    .bar_navigation_btn{
+        display: block;
+    }
+    .footer_navigation{
+        .wraper{
+            flex-direction: column;
+            height: auto;
+            width: 85%;
+        }
+        .footer_shedule,
+        .footer_nav,
+        .footer_about{
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
