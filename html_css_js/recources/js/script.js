@@ -156,6 +156,42 @@ for (let navItem of main_navItems){
                 document.querySelector('[data-side_bar_spy="' + sectionId + '"]').classList.add("active");
             }
         })
+
+        /* scroll animation */
+
+        let animate_titles = document.querySelectorAll(".title_wrap.animate_title");
+        for(let animate_title of animate_titles){
+            let item_height = animate_title.offsetHeight;
+            let item_offset = animate_title.offsetTop;
+
+            let animItemPoint = window.innerHeight - item_height * 0.4;
+
+            if(item_height > window.innerHeight){
+                animItemPoint = window.innerHeight - window.innerHeight / animationStart;
+            }
+        
+            if(window.scrollY > item_offset - animItemPoint) {
+                animate_title.classList.add("active");
+            }
+        }
+
+        let animate_items = document.querySelectorAll(".animate_item");
+        for(let animate_item of animate_items){
+            let item_height = animate_item.offsetHeight;
+            let item_offset = animate_item.offsetTop;
+
+            let animItemPoint = window.innerHeight - item_height * 0.3;
+
+            if(item_height > window.innerHeight){
+                animItemPoint = window.innerHeight - window.innerHeight / animationStart;
+            }
+        
+            if(window.scrollY > item_offset - animItemPoint) {
+                animate_item.classList.add("active");
+            }
+        }
+
+
     }
 })();
 
@@ -206,7 +242,39 @@ for (let navItem of main_navItems){
             });
         }
     }
+})();
 
+(function(){
+    let btn_footerToContact = document.querySelector('[data-btn_scroll_spy_footer]');
+    let btn_headerToContact = document.querySelector('[data-btn_scroll_spy_header]');
+    let headerHeight = document.querySelector('.header_navigation').clientHeight;
+
+    btn_headerToContact.onclick= function(){
+        let section_name = this.getAttribute('data-btn_scroll_spy_header');
+        let section_offset = document.querySelector(section_name).offsetTop;
+        
+        window.scroll({
+            behavior: 'smooth',
+            top: section_offset - headerHeight
+        });
+    }
+
+    btn_footerToContact.onclick= function(){
+        let section_name = this.getAttribute('data-btn_scroll_spy_footer');
+        let section_offset = document.querySelector(section_name).offsetTop;
+        
+        window.scroll({
+            behavior: 'smooth',
+            top: section_offset - headerHeight
+        });
+    }
+})();
+
+/* animation */
+
+(function(){
+        let animate_item = document.querySelector(".motivation_wrap");
+        animate_item.classList.add("active");
 })();
 
 /* footer */
