@@ -9,7 +9,6 @@
 	font-family: 'Mulish-Light';
 	src: url('../fonts/Mulish/Mulish-Light.ttf') format('truetype'),
 		 url('../fonts/Mulish/Mulish-Medium.ttf') format('truetype'),
-         url('../fonts/Mulish/Mulish-ExtraBold.ttf') format('truetype'),
          url('../fonts/Mulish/Mulish-Regular.ttf') format('truetype'), 
 }
 html{
@@ -160,14 +159,45 @@ body{
 /* main */
 
 .main_wrap{
+    
+    overflow: hidden;
 
-    .block_1{
-        background: red;
-        width: 100%;
-        min-height: 100vh;
+    .video_wrap{
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .background_video{
+            min-height: 100vh;
+            width: 100%;
+        }
+    }
+
+    .header_contactUS{
+        display: flex;
+        position: absolute;
+        left: 0;
+        height: 14rem;
+        width:50%;
+        background-color: rgb(242, 58, 46);
+        margin-top: -7rem;
+        justify-content: center; 
+        
+        .scew_block{
+            width: 5rem;
+            transform: skew(-10deg);
+            height: 100%;
+            position: absolute;
+            background-color: rgb(242, 58, 46);
+            right: -2.5rem;
+        }
     }
 
     .motivation_wrap{
+        overflow: hidden;
+
         .wraper{
             justify-content: center;
             align-items: center;
@@ -208,6 +238,17 @@ body{
         }
     }
     .contactUs_wrap,
+    .services_wrap,
+    .trainers_wrap,
+    .shedule_wrap,
+    .classes_wrap{
+        padding: 8rem 0;
+    }
+    .healthies_wrap{
+        padding: 20rem 0 8rem 0;
+    }
+
+    .contactUs_wrap,
     .healthies_wrap,
     .services_wrap,
     .trainers_wrap,
@@ -215,7 +256,7 @@ body{
     .classes_wrap{
         background: rgb(255, 255, 255);
         font-size: 1.8rem;
-        padding: 8rem 0;
+        
 
         .wraper{
             flex-wrap: wrap;
@@ -337,7 +378,16 @@ body{
                 padding: 1.5rem;
                 cursor: pointer;
             }
+            
         }
+    }
+
+    .shedule_week_wrap{
+        display: none;
+    }
+
+    .shedule_week_wrap.active{
+        display: flex;
     }
 
     .trainer_wrap{
@@ -483,10 +533,74 @@ body{
         }
        
     }
-    
+
+    .footer_contactUS{
+        display: flex;
+        position: absolute;
+        right: 0;
+        height: 14rem;
+        width:50%;
+        background-color: rgb(242, 58, 46);
+        margin-top: -7rem;
+        justify-content: center;
+
+        .scew_block{
+            width: 5rem;
+            transform: skew(10deg);
+            height: 100%;
+            position: absolute;
+            background-color: rgb(242, 58, 46);
+            left: -2.5rem;
+
+        }
+    }
+    .contactUs_wraper{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .working_hours{
+        width: 60%;
+
+        h3{
+            font-size: 1.8rem;
+            font-family: 'Mulish-Bold';
+            color: rgb(255, 255, 255);
+        }
+        p{
+            font-size: 1.8rem;
+            color: rgb(255, 255, 255);
+        }
+    }
+
+    .contactUs_btn{
+        width: 14rem;
+        height: 5rem;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        background: hsl(36, 94%, 52%);
+        border-radius: 4px;
+        border: 0;
+        font-family: 'Mulish-Bold';
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        span{
+            padding-right: 1.5rem;
+        }
+    }
+   
 }
 
 /* footer */
+
 footer{
     padding: 15rem 0;
 }
@@ -589,9 +703,8 @@ footer{
 
 /* adaptiv */
 
-@media (min-width: 1401px){
+@media (min-width: 2200px){
     .wraper{
-        float: none;
         width: 1200px;
     }
 
@@ -599,20 +712,74 @@ footer{
     .bar_navigation_btn{
         display: none;
     }
+
 }
-@media (min-width: 1201px) and (max-width: 1400px){
+@media (min-width: 1401px)and (max-width: 2300px){
     .wraper{
-        float: none;
         width: 1200px;
     }
+
     /* header */
     .bar_navigation_btn{
         display: none;
     }
+
+     /*main*/
+     .main_wrap{
+        
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+    }
+}
+@media (min-width: 1201px) and (max-width: 1400px){
+    .wraper{
+        width: 93%;
+    }
+    /* header */
+    /* .header_navigation{
+        .main_nav{
+            padding-right: 2rem;
+        }
+    } */
+
+    .bar_navigation_btn{
+        display: none;
+    }
+
+    /*main*/
+    .main_wrap{
+        
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        
+        .header_contactUS,
+        .footer_contactUS{
+            width: 80%;
+            
+            .contactUs_wraper{
+                width: 85%;
+            }
+        }
+    
+        .footer_contactUS{
+            width: 80%;
+            
+            .contactUs_wraper{
+                width: 85%;
+            }
+        }
+    }
 }
 @media (min-width: 993px) and (max-width: 1200px){
     .wraper{
-        float: none;
         width: 93%;
     }
     /* header */
@@ -621,16 +788,13 @@ footer{
     }
     /* main */
     .main_wrap{
-        .motivation_wrap{
-            .motivation_img{
-                height: 450px;
-                width: 150%;
-            }        
-            .motivation_phrase{
-                margin-top: -450px;
-                height: 450px;
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
             }
         }
+        
         .trainers_list_wrap,
         .services_list_wrap,
         .shedule_week_wrap,
@@ -647,6 +811,14 @@ footer{
         
         .trainer_wrap{
             width: 48%;
+        }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 90%;
+
+            .contactUs_wraper{
+                width: 85%;
+            }
         }
 
     }
@@ -665,6 +837,12 @@ footer{
     }
     /* main */
     .main_wrap{
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
         .motivation_wrap{
             .motivation_img{
                 height: 400px;
@@ -697,6 +875,24 @@ footer{
         }
         .contactForm_wrap{
             width: 90%;
+        }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 70%;
+            height: 20rem;
+            margin-top: -10rem;
+            justify-content: center;
+
+            .contactUs_wraper{
+                width: 85%;
+                align-items: center;
+            }
+            .working_hours{
+                width: 80%;
+            }
+            .contactUs_btn{
+                width: 80%;
+            }
         }
     }
     /* footer */
@@ -735,6 +931,13 @@ footer{
     }
     /* main */
     .main_wrap{
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        
         .motivation_wrap{
             .motivation_img{
                 height: 350px;
@@ -774,6 +977,25 @@ footer{
                 width: 100%;
             }
         }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 90%;
+            height: 20rem;
+            margin-top: -10rem;
+            justify-content: center;
+
+            .contactUs_wraper{
+                width: 85%;
+                align-items: center;
+            }
+            .working_hours{
+                width: 90%;
+            }
+            .contactUs_btn{
+                width: 90%;
+            }
+        }
+
     }
 
     /* footer */
@@ -812,7 +1034,13 @@ footer{
     }
     /* main */
     .main_wrap{
-
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        
         .motivation_wrap{
 
             .motivation_img{
@@ -855,7 +1083,27 @@ footer{
                 width: 100%;
             }
         }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 100%;
+            height: 20rem;
+            margin-top: -10rem;
 
+            .contactUs_wraper{
+                width: 100%;
+                justify-content: center;
+            }
+
+            .working_hours{
+                width: 90%;
+            }
+            .contactUs_btn{
+                width: 90%;
+            }
+            .scew_block{
+                display: none;
+            }
+        }
 
     }
 

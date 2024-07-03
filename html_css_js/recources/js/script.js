@@ -82,8 +82,13 @@ for (let navItem of main_navItems){
         }
         fitness_day.addEventListener('click', (evt)=>{
             document.querySelector(".week_wrap span.active").classList.remove("active");
-            evt.target.classList.add("active"); 
+            evt.target.classList.add("active");
+            let day_index = evt.target.getAttribute("data-day");
+            document.querySelector(".shedule_week_wrap.active").classList.remove("active");
+            document.getElementById(day_index).classList.add("active");
         });
+
+
     };
 })();
 
@@ -115,6 +120,95 @@ for (let navItem of main_navItems){
         });
 })();
 
+(function(){
+    document.onscroll = function(){
+    
+        let scrollTop = window.scrollY;   
+        let windowHeight = window.innerHeight;
+        let navScrollSpy = document.querySelectorAll('[data-main_nav_spy]');
+        let sideBarScrollSpy = document.querySelectorAll('[data-side_bar_spy]');
+        let dataScrollSpy = document.querySelectorAll('[data-scroll]');
+        
+        dataScrollSpy.forEach(function(el){
+            let sectionId = el.getAttribute("data-scroll");
+            let sectionOffset = el.offsetTop;
+
+            sectionOffset = sectionOffset - windowHeight * 0.2;
+
+            if(scrollTop >= sectionOffset){
+                for( let item of navScrollSpy){
+                    item.classList.remove('active');
+                };
+                document.querySelector('[data-main_nav_spy="' + sectionId + '"]').classList.add("active");
+            }
+        })
+
+        dataScrollSpy.forEach(function(el){
+            let sectionId = el.getAttribute("data-scroll");
+            let sectionOffset = el.offsetTop;
+
+            sectionOffset = sectionOffset - windowHeight * 0.2;
+
+            if(scrollTop >= sectionOffset){
+                for( let item of sideBarScrollSpy){
+                    item.classList.remove('active');
+                };
+                document.querySelector('[data-side_bar_spy="' + sectionId + '"]').classList.add("active");
+            }
+        })
+    }
+})();
+
+(function(){
+    let sidebar_nav_irems = document.querySelectorAll('[data-side_bar_spy]');
+    let main_nav_items = document.querySelectorAll('[data-main_nav_spy]');
+    let footer_nav_items = document.querySelectorAll('[data-footer_nav_spy]');
+    let headerHeight = document.querySelector('.header_navigation').clientHeight;
+
+    for(let item of main_nav_items){
+        item.onclick = function(evt){
+            evt.preventDefault();
+
+            let section_name = this.getAttribute('data-main_nav_spy');
+            let section_offset = document.querySelector(section_name).offsetTop;
+
+            window.scroll({
+                behavior: 'smooth',
+                top: section_offset - headerHeight
+            });
+        }
+    }
+
+    for(let item of sidebar_nav_irems){
+        item.onclick = function(evt){
+            evt.preventDefault();
+
+            let section_name = this.getAttribute('data-side_bar_spy');
+            let section_offset = document.querySelector(section_name).offsetTop;
+
+            window.scroll({
+                behavior: 'smooth',
+                top: section_offset - headerHeight
+            });
+        }
+    }
+
+    for(let item of footer_nav_items){
+        item.onclick = function(evt){
+            evt.preventDefault();
+
+            let section_name = this.getAttribute('data-footer_nav_spy');
+            let section_offset = document.querySelector(section_name).offsetTop;
+
+            window.scroll({
+                behavior: 'smooth',
+                top: section_offset - headerHeight
+            });
+        }
+    }
+
+})();
+
 /* footer */
 
 (function(){
@@ -128,4 +222,4 @@ for (let navItem of main_navItems){
         evt.target.classList.remove("item_hover");
         })
     };
-    })();
+})();

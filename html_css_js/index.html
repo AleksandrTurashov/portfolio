@@ -14,12 +14,12 @@
             </div>
             <div class="sidebar_nav">
                 <ul>
-                    <li><a href="#" class="nav_item active">home</a></li>
-                    <li><a href="#" class="nav_item">classes</a></li>
-                    <li><a href="#" class="nav_item">shedule</a></li>
-                    <li><a href="#" class="nav_item">trainer</a></li>
-                    <li><a href="#" class="nav_item">services</a></li>
-                    <li><a href="#" class="nav_item">contact</a></li>
+                    <li><a href="#" class="nav_item active" data-side_bar_spy="#home_section">home</a></li>
+                    <li><a href="#" class="nav_item" data-side_bar_spy="#classes_section">classes</a></li>
+                    <li><a href="#" class="nav_item" data-side_bar_spy="#shedule_section">shedule</a></li>
+                    <li><a href="#" class="nav_item" data-side_bar_spy="#traners_section">trainer</a></li>
+                    <li><a href="#" class="nav_item" data-side_bar_spy="#services_section">services</a></li>
+                    <li><a href="#" class="nav_item" data-side_bar_spy="#contact_section">contact</a></li>
                 </ul>
             </div>
         </div>
@@ -34,12 +34,12 @@
                     </div>
                     <div class="main_nav">
                         <ul>
-                            <li><a href="#" class="nav_item active">home</a></li>
-                            <li><a href="#" class="nav_item">classes</a></li>
-                            <li><a href="#" class="nav_item">shedule</a></li>
-                            <li><a href="#" class="nav_item">trainer</a></li>
-                            <li><a href="#" class="nav_item">services</a></li>
-                            <li><a href="#" class="nav_item">contact</a></li>
+                            <li><a href="#" class="nav_item active" data-main_nav_spy="#home_section">home</a></li>
+                            <li><a href="#" class="nav_item" data-main_nav_spy="#classes_section">classes</a></li>
+                            <li><a href="#" class="nav_item" data-main_nav_spy="#shedule_section">shedule</a></li>
+                            <li><a href="#" class="nav_item" data-main_nav_spy="#traners_section">trainer</a></li>
+                            <li><a href="#" class="nav_item" data-main_nav_spy="#services_section">services</a></li>
+                            <li><a href="#" class="nav_item" data-main_nav_spy="#contact_section">contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,8 +47,24 @@
         </header>
         <div class="main_wrap" id="main_content">
 
-            <div class="block_1">
+             <div class="video_wrap" id="home_section" data-scroll="#home_section">
+                <video autoplay muted loop class="background_video">
+                    <source src="recources/video/videoplayback.webm" type="video/webm">
+                </video>
+            </div>
 
+            <div class="header_contactUS">
+                <div class="scew_block"></div>
+                <div class="contactUs_wraper">
+                    <div class="working_hours">
+                        <h3>Hours</h3>
+                        <p>Opening: 7:30am — Closing: 9:00pm</p>
+                    </div>
+                    <div class="contactUs_btn" type="button">
+                        <span>contact us</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
             </div>
 
             <div class="healthies_wrap">
@@ -64,8 +80,7 @@
                 </div>
             </div>
 
-
-            <div class="motivation_wrap ">
+            <div class="motivation_wrap">
                 <div class="motivation_img">
                     <img src="recources/image/bg_2.jpg" alt="image">
                 </div>
@@ -77,7 +92,7 @@
                 </div>
             </div>
 
-            <div class="classes_wrap ">
+            <div class="classes_wrap" id="classes_section" data-scroll="#classes_section">
                 <div class="wraper">
                     <div class="title_wrap">
                         <p class="title">Fitness Class</p>
@@ -186,7 +201,7 @@
                     
             </div>
 
-            <div class="motivation_wrap ">
+            <div class="motivation_wrap">
                 <div class="motivation_img">
                     <img src="recources/image/bg_3.jpg" alt="image">
                 </div>
@@ -198,7 +213,7 @@
                 </div>
             </div>
 
-            <div class="shedule_wrap ">
+            <div class="shedule_wrap" id="shedule_section" data-scroll="#shedule_section">
 
                 <div class="wraper">
                     <div class="title_wrap">
@@ -208,16 +223,16 @@
                     </div>
                     <div class="week_wrap">
                         <ul>
-                            <li><span class="day_wrap active">M</span></li>
-                            <li><span class="day_wrap">T</span></li>
-                            <li><span class="day_wrap">W</span></li>
-                            <li><span class="day_wrap">T</span></li>
-                            <li><span class="day_wrap">F</span></li>
-                            <li><span class="day_wrap">S</span></li>
-                            <li><span class="day_wrap">S</span></li>
+                            <li><span class="day_wrap active" data-day="monday">M</span></li>
+                            <li><span class="day_wrap" data-day="tuesday">T</span></li>
+                            <li><span class="day_wrap" data-day="wensday">W</span></li>
+                            <li><span class="day_wrap" data-day="thorsday">T</span></li>
+                            <li><span class="day_wrap" data-day="fryday">F</span></li>
+                            <li><span class="day_wrap" data-day="sutterday">S</span></li>
+                            <li><span class="day_wrap" data-day="sunday">S</span></li>
                         </ul>
                     </div>
-                    <div class="shedule_week_wrap">
+                    <div class="shedule_week_wrap active" id="monday">
                         <div class="class_wrap">
                             <div class= image_wrap>
                                 <img src="recources/image/img_1.jpg" alt="image">
@@ -315,11 +330,599 @@
                             </div>
                         </div>
                     </div>
+                    <div class="shedule_week_wrap" id="tuesday">
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #2
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>                 
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #2
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #2
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #2
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #2
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #2
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shedule_week_wrap" id="wensday">
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #3
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>                 
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #3
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #3
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #3
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #3
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #3
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shedule_week_wrap" id="thorsday">
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #4
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>                 
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #4
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #4
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #4
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #4
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #4
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shedule_week_wrap" id="fryday">
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_1.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #5
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>                 
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_1.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #5
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #5
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #5
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #5
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #5
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shedule_week_wrap" id="sutterday">
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #6
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>                 
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_2.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #6
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #6
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #6
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #6
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #6
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shedule_week_wrap" id="sunday">
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #7
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>                 
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_4.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #7
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #7
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_3.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #7
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_1.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #7
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="class_wrap">
+                            <div class= image_wrap>
+                                <img src="recources/image/img_1.jpg" alt="image">
+                            </div>
+                            <div class="description_wrap">
+                                <h3>
+                                    Fitness Class Name #7
+                                </h3>
+                                <span>
+                                    By Justin Daniel,
+                                </span>
+                                <span>
+                                    30 minutes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                     
             </div>
 
-            <div class="motivation_wrap ">
+            <div class="motivation_wrap">
                 <div class="motivation_img">
                     <img src="recources/image/bg_1.jpg" alt="image">
                 </div>
@@ -331,7 +934,7 @@
                 </div>
             </div>
 
-            <div class="trainers_wrap">
+            <div class="trainers_wrap" id="traners_section" data-scroll="#traners_section">
                 <div class="wraper">
                     <div class="title_wrap">
                         <p class="title">Trainer</p>
@@ -408,7 +1011,7 @@
                 </div>
             </div>
 
-            <div class="services_wrap">
+            <div class="services_wrap" id="services_section" data-scroll="#services_section">
                 <div class="wraper">
                     <div class="title_wrap">
                         <p class="title">Fitness Services</p>
@@ -498,7 +1101,7 @@
                 </div>
             </div>
 
-            <div class="contactUs_wrap">
+            <div class="contactUs_wrap" id="contact_section" data-scroll="#contact_section">
                 <div class="wraper">
                     <div class="title_wrap">
                         <p class="title">Get In Touch</p>
@@ -519,9 +1122,22 @@
                     </div>
                 </div>
             </div>
-
-
+            
+            <div class="footer_contactUS">
+                <div class="scew_block"></div>
+                <div class="contactUs_wraper">
+                    <div class="working_hours">
+                        <h3>Hours</h3>
+                        <p>Opening: 7:30am — Closing: 9:00pm</p>
+                    </div>
+                    <div class="contactUs_btn" type="button">
+                        <span>contact us</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
         </div>
+       
         <footer id="footer">
             <div class="footer_navigation">
                 <div class="wraper">
@@ -532,10 +1148,12 @@
                     <div class="footer_nav">
                         <h4>links</h4>
                         <ul>
-                            <li><a href="#" class="nav_item">home</a></li>
-                            <li><a href="#" class="nav_item">classes</a></li>
-                            <li><a href="#" class="nav_item">shedule</a></li>
-                            <li><a href="#" class="nav_item">trainer</a></li>
+                            <li><a href="#" class="nav_item" data-footer_nav_spy="#home_section">home</a></li>
+                            <li><a href="#" class="nav_item" data-footer_nav_spy="#classes_section">classes</a></li>
+                            <li><a href="#" class="nav_item" data-footer_nav_spy="#shedule_section">shedule</a></li>
+                            <li><a href="#" class="nav_item" data-footer_nav_spy="#traners_section">trainer</a></li>
+                            <li><a href="#" class="nav_item" data-footer_nav_spy="#services_section">sevices</a></li>
+                            <li><a href="#" class="nav_item" data-footer_nav_spy="#contact_section">contact</a></li>
                         </ul>
                     </div>
                     <div class="footer_subscribe">
