@@ -21,6 +21,7 @@ body{
 }
 .wrap{
     margin: 0 auto;
+    overflow: hidden;
 }
 .wraper{
     margin: 0 auto;
@@ -241,6 +242,7 @@ body{
             align-items: center;
         }
         .motivation_img{
+            position: relative;
             height: 500px;
             width: 100%;
             background: rgba(0, 0, 0, 0.25);
@@ -256,9 +258,10 @@ body{
             }
         }
         .motivation_phrase{
+            position: relative;
             margin-top: -500px;
             height: 500px;
-            color: rgb(255, 255, 255);  
+            color: rgb(255, 255, 255); 
         }
         .title{
             display: block;
@@ -282,8 +285,12 @@ body{
     .classes_wrap{
         padding: 8rem 0;
     }
-    .healthies_wrap{
+    .healthies_wrap{ 
         padding: 20rem 0 8rem 0;
+    }
+
+    .carousel_animation{
+        transition: margin-left 1.4s ease-in-out 0.3s;
     }
 
     .contactUs_wrap,
@@ -321,6 +328,43 @@ body{
 
     .contactUs_wrap{
         background: rgb(248, 249, 250);
+    }
+
+    .helthies_list_wrap{
+        width: 1200px;
+        overflow: hidden;
+
+        .helthies_list_carousel{
+            display: flex;
+            width: 2400px;
+            height: 450;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .switch_btns_wrap{
+            display: flex;
+            justify-content: center;
+        }
+
+        .switch_wrap{
+            margin: 1rem 1rem;
+            cursor: pointer;
+            display: none;
+        }
+        .dot_switch{
+            height: 1rem;
+            width: 1rem;
+            background: rgb(204, 204, 204);
+            border-radius: 50%;
+            display: block;
+        }
+        .dot_switch.active{
+            background: rgb(242, 58, 46);
+        }
+        .switch_wrap.abled_btn{
+            display: block;
+        }
     }
 
     .services_list_wrap,
@@ -384,7 +428,6 @@ body{
             color: rgb(255, 124, 103);
         }
     }
-
     
     .week_wrap{
         margin-bottom: 5rem;
@@ -469,8 +512,8 @@ body{
     }
 
     .service_wrap{
-        width: 33%;
-        /* min-height: 400px; */
+        padding: 1.5rem 3rem;
+        width: 320px;
         margin-bottom: 2rem;
         cursor: default;
 
@@ -498,9 +541,8 @@ body{
 
     }
     .service_wrap_hover{
-        box-sizing: border-box;
         box-shadow: 0 0 2rem -.5rem rgba(0, 0, 0, 0.2);
-        transition: box-shadow .4s ease-in-out;;
+        transition: box-shadow .4s ease-in-out;
     }
 
     .contactForm_wrap{
@@ -649,29 +691,46 @@ body{
         transform: translate(0, 100%);
         opacity: 0;
     }
-
     .animate_item.active{
         transform: translate(0, 0);
         opacity: 1;
     }
-    .animate_item.active:nth-child(1){
-        transition: transform 1s ease 0s, opacity 0.8s ease 0.4s;
+
+    .trainers_list_wrap{
+        .animate_item.active:nth-child(1){
+            transition: transform 1s ease 0s, opacity 0.8s ease 0.4s;
+        }
+        .animate_item.active:nth-child(2){
+            transition: transform 1s ease 0.2s, opacity 0.8s ease 0.6s;
+        }
+        .animate_item.active:nth-child(3){
+            transition: transform 1s ease 0.4s, opacity 0.8s ease 0.8s;
+        }
+        .animate_item.active:nth-child(4){
+            transition: transform 1s ease 0.6s, opacity 0.8s ease 1s;
+        }
     }
-    .animate_item.active:nth-child(2){
-        transition: transform 1s ease 0.2s, opacity 0.8s ease 0.6s;
+    .services_list_wrap{
+        .animate_item.active:nth-child(1){
+            transition: transform 1s ease 0s, opacity 0.8s ease 0.4s;
+        }
+        .animate_item.active:nth-child(2){
+            transition: transform 1s ease 0.2s, opacity 0.8s ease 0.6s;
+        }
+        .animate_item.active:nth-child(3){
+            transition: transform 1s ease 0.4s, opacity 0.8s ease 0.8s;
+        }
+        .animate_item.active:nth-child(4){
+            transition: transform 1s ease 0.0s, opacity 0.8s ease 0.4s;
+        }
+        .animate_item.active:nth-child(5){
+            transition: transform 1s ease 0.2s, opacity 0.8s ease 0.6s;
+        }
+        .animate_item.active:nth-child(6){
+            transition: transform 1s ease 0.4s, opacity 0.8s ease 0.8s;
+        }
     }
-    .animate_item.active:nth-child(3){
-        transition: transform 1s ease 0.4s, opacity 0.8s ease 0.8s;
-    }
-    .animate_item.active:nth-child(4){
-        transition: transform 1s ease 0.6s, opacity 0.8s ease 1s;
-    }
-    .animate_item.active:nth-child(5){
-        transition: transform 1s ease 0.8s, opacity 0.8s ease 1.2s;
-    }
-    .animate_item.active:nth-child(6){
-        transition: transform 1s ease 1s, opacity 0.8s ease 1.4s;
-    }     
+     
 }
 
 /* footer */
@@ -787,7 +846,6 @@ footer{
     .bar_navigation_btn{
         display: none;
     }
-
 }
 @media (min-width: 1401px)and (max-width: 2300px){
     .wraper{
@@ -812,14 +870,8 @@ footer{
 }
 @media (min-width: 1201px) and (max-width: 1400px){
     .wraper{
-        width: 93%;
+        width: 1140;
     }
-    /* header */
-    /* .header_navigation{
-        .main_nav{
-            padding-right: 2rem;
-        }
-    } */
 
     .bar_navigation_btn{
         display: none;
@@ -834,6 +886,17 @@ footer{
                 width: auto;
             }
         }
+        .helthies_list_wrap{
+            width: 100%;
+
+            .helthies_list_carousel{
+                width: 2280px;
+            }
+
+            .service_wrap{
+                width: 300px;
+        }
+    }
         
         .header_contactUS,
         .footer_contactUS{
@@ -869,7 +932,25 @@ footer{
                 width: auto;
             }
         }
-        
+        .helthies_list_wrap{
+            width: 860;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2580px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 1.5rem;
+                width: 400px;
+            }
+        }.motivation_wrap{
+            .motivation_img{
+                height: 400px;
+                width: 150%;
+                left: -25%;
+            }
+        }
         .trainers_list_wrap,
         .services_list_wrap,
         .shedule_week_wrap,
@@ -879,9 +960,12 @@ footer{
             .class_wrap{
                 width: 100%;
             }
-        } 
-        .service_wrap{
-            width: 48%;
+        }  
+        .services_list_wrap{
+            .service_wrap{
+                width: 48%;
+                padding: 0;
+            }
         }
         
         .trainer_wrap{
@@ -931,6 +1015,7 @@ footer{
             .motivation_img{
                 height: 400px;
                 width: 150%;
+                left: -25%;
             }
 
             .title{
@@ -941,6 +1026,20 @@ footer{
                 height: 400px;
             }
         }
+        .helthies_list_wrap{
+            width: 480;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2880px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 3rem;
+                width: 420px;
+            }
+        }
+
         .trainers_list_wrap,
         .services_list_wrap,
         .shedule_week_wrap,
@@ -951,8 +1050,11 @@ footer{
                 width: 100%;
             }
         } 
-        .service_wrap{
-            width: 48%;
+        .services_list_wrap{
+            .service_wrap{
+                width: 48%;
+                padding: 0;
+            }
         }
         .trainer_wrap{
             width: 48%;
@@ -1035,6 +1137,7 @@ footer{
             .motivation_img{
                 height: 350px;
                 width: 150%;
+                left: -25%;
             }
             .title{
                 font-size: 3.2rem;
@@ -1042,6 +1145,19 @@ footer{
             .motivation_phrase{
                 margin-top: -350px;
                 height: 350px;
+            }
+        }
+        .helthies_list_wrap{
+            width: 480;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2880px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 3rem;
+                width: 420px;
             }
         }
         .trainers_list_wrap, 
@@ -1147,6 +1263,7 @@ footer{
             .motivation_img{
                 height: 300px;
                 width: 150%;
+                left: -25%;
             }
             
             .title{
@@ -1157,6 +1274,19 @@ footer{
                 height: 300px;
             }
             
+        }
+        .helthies_list_wrap{
+            width: 480;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2880px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 3rem;
+                width: 420px;
+            }
         }
         .trainers_list_wrap,
         .services_list_wrap,
@@ -1230,8 +1360,3 @@ footer{
         }
     }
 }
-
-
-
-
-

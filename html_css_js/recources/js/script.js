@@ -55,6 +55,152 @@ for (let navItem of main_navItems){
         };
 })();
 
+/* healthy slider*/
+
+(function(){
+    
+    let windowWidth = window.innerWidth;
+
+    window.addEventListener('resize', ()=>{
+        let windowWidthAdapt = window.innerWidth;
+        adaptSwitchDots(windowWidthAdapt);
+
+    })
+
+    adaptSwitchDots(windowWidth);
+
+    function adaptSwitchDots(windowWidth){ 
+        let quantity;
+        let width;
+
+        if(windowWidth >= 1201){
+            quantity = 2;
+            addSwitchesDots(quantity);
+
+            let active_btn = document.querySelector(".dot_switch.active");
+
+            if(active_btn.id >= quantity){
+                active_btn.classList.remove("active");
+                btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                btns[1].classList.add("active");
+            }
+
+        }
+        if(windowWidth >= 993 && windowWidth <= 1200){
+            quantity = 3;
+            addSwitchesDots(quantity);
+
+            let active_btn = document.querySelector(".dot_switch.active");
+            
+            if(windowWidth < 994){
+                if((active_btn.id/2) >= 2.5){
+                    active_btn.classList.remove("active");
+                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                    btns[2].classList.add("active");
+                }
+                else if((active_btn.id/2) < 2.5 && (active_btn.id/2) > 1){
+                    active_btn.classList.remove("active");
+                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                    btns[1].classList.add("active");
+                }
+                else if((active_btn.id/2) <= 1){
+                    active_btn.classList.remove("active");
+                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                    btns[0].classList.add("active");
+                }
+            }
+        }
+        if(windowWidth <= 992){
+            quantity = 6;
+            addSwitchesDots(quantity);
+
+            let active_btn = document.querySelector(".dot_switch.active");
+            
+            if(windowWidth > 991){
+                if(active_btn.id == 3){
+                    active_btn.classList.remove("active");
+                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                    btns[4].classList.add("active");
+                }
+                if(active_btn.id == 2){
+                    active_btn.classList.remove("active");
+                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                    btns[2].classList.add("active");
+                }
+                if(active_btn.id == 1){
+                    active_btn.classList.remove("active");
+                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                    btns[0].classList.add("active");
+                }
+            }
+
+        }
+    }
+
+    function addSwitchesDots(quantity){
+        let abled_btns = document.querySelectorAll(".switch_wrap.abled_btn");
+        let btns = document.querySelectorAll(".switch_wrap");
+        if(abled_btns.length >= quantity){
+            for(let i = 0; i < abled_btns.length; i++){
+                btns[i].classList.remove("abled_btn");
+            }
+            for(let i = 0; i < quantity; i++){
+                btns[i].classList.add("abled_btn");
+            }
+        }
+        else
+            for(let i = abled_btns.length; i < quantity; i++){
+                btns[i].classList.add("abled_btn");
+            }
+    }
+
+})();
+
+(function(){
+
+    let windWidth = window.innerWidth;
+
+    let switch_btns = document.querySelectorAll(".dot_switch");
+    let carouselBlock = document.querySelector(".helthies_list_carousel.carousel_animation");
+
+    for( let btn of switch_btns){
+        btn.addEventListener('click' , (event)=>{
+            document.querySelector(".dot_switch.active").classList.remove("active");
+            event.target.classList.add("active");
+
+            if(windWidth >= 1201){
+                quantity = 2;
+                width = 1200;
+                moveSliderBlock(carouselBlock, quantity, width);
+            }
+            if(windWidth >= 993 && windWidth <= 1200){
+                quantity = 3;
+                width = 860;
+                moveSliderBlock(carouselBlock, quantity, width);
+            }
+            if(windWidth <= 992){
+                quantity = 6;
+                width = 480;
+                moveSliderBlock(carouselBlock, quantity, width);
+            }
+
+        })
+    }
+
+    function moveSliderBlock(carouselBlock, quantity, width){
+        let actbtn = document.querySelector(".dot_switch.active");
+
+        for(let i = 0; i < quantity; i++){
+            if(actbtn.id == (i+1)){
+                carouselBlock.style.marginLeft = '-'+(width*i)+'px';
+            }
+        }
+    }
+
+})();
+
+
+
 /* fitness classes */
 
 (function(){
@@ -87,8 +233,6 @@ for (let navItem of main_navItems){
             document.querySelector(".shedule_week_wrap.active").classList.remove("active");
             document.getElementById(day_index).classList.add("active");
         });
-
-
     };
 })();
 
@@ -180,7 +324,7 @@ for (let navItem of main_navItems){
             let item_height = animate_item.offsetHeight;
             let item_offset = animate_item.offsetTop;
 
-            let animItemPoint = window.innerHeight - item_height * 0.3;
+            let animItemPoint = window.innerHeight - item_height * 0.2;
 
             if(item_height > window.innerHeight){
                 animItemPoint = window.innerHeight - window.innerHeight / animationStart;
