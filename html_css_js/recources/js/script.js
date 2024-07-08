@@ -60,23 +60,26 @@ for (let navItem of main_navItems){
 (function(){
     
     let windowWidth = window.innerWidth;
+    
+    let carouselBlock = document.querySelector(".helthies_list_carousel.carousel_animation");
 
     window.addEventListener('resize', ()=>{
+        
+        let carouselBlock = document.querySelector(".helthies_list_carousel.carousel_animation");
         let windowWidthAdapt = window.innerWidth;
         adaptSwitchDots(windowWidthAdapt);
-
+        moveSliderBlock(carouselBlock);
     })
-
+    
+    moveSliderBlock(carouselBlock);
     adaptSwitchDots(windowWidth);
 
     function adaptSwitchDots(windowWidth){ 
         let quantity;
-        let width;
 
         if(windowWidth >= 1201){
             quantity = 2;
             addSwitchesDots(quantity);
-
             let active_btn = document.querySelector(".dot_switch.active");
 
             if(active_btn.id >= quantity){
@@ -84,56 +87,28 @@ for (let navItem of main_navItems){
                 btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
                 btns[1].classList.add("active");
             }
-
         }
+
         if(windowWidth >= 993 && windowWidth <= 1200){
             quantity = 3;
             addSwitchesDots(quantity);
-
             let active_btn = document.querySelector(".dot_switch.active");
             
-            if(windowWidth < 994){
-                if((active_btn.id/2) >= 2.5){
-                    active_btn.classList.remove("active");
-                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
-                    btns[2].classList.add("active");
-                }
-                else if((active_btn.id/2) < 2.5 && (active_btn.id/2) > 1){
-                    active_btn.classList.remove("active");
-                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
-                    btns[1].classList.add("active");
-                }
-                else if((active_btn.id/2) <= 1){
-                    active_btn.classList.remove("active");
-                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
-                    btns[0].classList.add("active");
-                }
+            if((active_btn.id/2) >= 2.5){
+                active_btn.classList.remove("active");
+                btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                btns[2].classList.add("active");
+            }
+            else if((active_btn.id/2) == 2){
+                active_btn.classList.remove("active");
+                btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
+                btns[1].classList.add("active");
             }
         }
+
         if(windowWidth <= 992){
             quantity = 6;
             addSwitchesDots(quantity);
-
-            let active_btn = document.querySelector(".dot_switch.active");
-            
-            if(windowWidth > 991){
-                if(active_btn.id == 3){
-                    active_btn.classList.remove("active");
-                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
-                    btns[4].classList.add("active");
-                }
-                if(active_btn.id == 2){
-                    active_btn.classList.remove("active");
-                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
-                    btns[2].classList.add("active");
-                }
-                if(active_btn.id == 1){
-                    active_btn.classList.remove("active");
-                    btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
-                    btns[0].classList.add("active");
-                }
-            }
-
         }
     }
 
@@ -158,8 +133,6 @@ for (let navItem of main_navItems){
 
 (function(){
 
-    let windWidth = window.innerWidth;
-
     let switch_btns = document.querySelectorAll(".dot_switch");
     let carouselBlock = document.querySelector(".helthies_list_carousel.carousel_animation");
 
@@ -168,27 +141,19 @@ for (let navItem of main_navItems){
             document.querySelector(".dot_switch.active").classList.remove("active");
             event.target.classList.add("active");
 
-            if(windWidth >= 1201){
-                quantity = 2;
-                width = 1200;
-                moveSliderBlock(carouselBlock, quantity, width);
-            }
-            if(windWidth >= 993 && windWidth <= 1200){
-                quantity = 3;
-                width = 860;
-                moveSliderBlock(carouselBlock, quantity, width);
-            }
-            if(windWidth <= 992){
-                quantity = 6;
-                width = 480;
-                moveSliderBlock(carouselBlock, quantity, width);
-            }
+            moveSliderBlock(carouselBlock);
 
         })
     }
+})();
 
-    function moveSliderBlock(carouselBlock, quantity, width){
-        let actbtn = document.querySelector(".dot_switch.active");
+function moveSliderBlock(carouselBlock){
+    let actbtn = document.querySelector(".dot_switch.active");
+    let btns_list = document.querySelectorAll(".switch_wrap.abled_btn")
+
+    if(btns_list.length == 2){
+        quantity = 2;
+        width = 1200;
 
         for(let i = 0; i < quantity; i++){
             if(actbtn.id == (i+1)){
@@ -196,10 +161,27 @@ for (let navItem of main_navItems){
             }
         }
     }
+    if(btns_list.length == 3){
+        quantity = 3;
+        width = 860;
 
-})();
+        for(let i = 0; i < quantity; i++){
+            if(actbtn.id == (i+1)){
+                carouselBlock.style.marginLeft = '-'+(width*i)+'px';
+            }
+        }
+    }
+    if(btns_list.length == 6){
+        quantity = 6;
+        width = 480;
 
-
+        for(let i = 0; i < quantity; i++){
+            if(actbtn.id == (i+1)){
+                carouselBlock.style.marginLeft = '-'+(width*i)+'px';
+            }
+        }
+    }
+}
 
 /* fitness classes */
 
