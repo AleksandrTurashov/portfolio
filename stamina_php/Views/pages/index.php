@@ -8,187 +8,28 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="sidebar_menu">
-            <div class="close_bar_navigation_btn" id="close_bar_navigation_btn">
-                <i class="fa-solid fa-xmark"></i>   
-            </div>
-            <div class="sidebar_nav">
-                <ul>
-                    <li><a href="#" class="nav_item active" data-side_bar_spy="#home_section">home</a></li>
-                    <li><a href="#" class="nav_item" data-side_bar_spy="#classes_section">classes</a></li>
-                    <li><a href="#" class="nav_item" data-side_bar_spy="#shedule_section">shedule</a></li>
-                    <li><a href="#" class="nav_item" data-side_bar_spy="#traners_section">trainer</a></li>
-                    <li><a href="#" class="nav_item" data-side_bar_spy="#services_section">services</a></li>
-                    <li><a href="#" class="nav_item" data-side_bar_spy="#contact_section">contact</a></li>
-                </ul>
-            </div>
-        </div>
+       
+            <?php 
+                MenuWidget::render('sideBarNav');
+            ?>
+
         <header>
-            <div class="header_navigation">
-                <div class="wraper">
-                    <div class="logo">
-                        <a href="">Stamina</a>
-                    </div>
-                    <div class="bar_navigation_btn" id="bar_navigation_btn">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                    <div class="main_nav">
-                        <ul>
-                            <li><a href="#" class="nav_item active" data-main_nav_spy="#home_section">home</a></li>
-                            <li><a href="#" class="nav_item" data-main_nav_spy="#classes_section">classes</a></li>
-                            <li><a href="#" class="nav_item" data-main_nav_spy="#shedule_section">shedule</a></li>
-                            <li><a href="#" class="nav_item" data-main_nav_spy="#traners_section">trainer</a></li>
-                            <li><a href="#" class="nav_item" data-main_nav_spy="#services_section">services</a></li>
-                            <li><a href="#" class="nav_item" data-main_nav_spy="#contact_section">contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
+            <?php 
+                MenuWidget::render('mainNav');
+            ?>
+
         </header>
         <div class="main_wrap" id="main_content">
 
-             <div class="video_wrap" id="home_section" data-scroll="#home_section">
-                <video autoplay muted loop class="background_video">
-                    <source src="recources/video/videoplayback.webm" type="video/webm">
-                </video>
-            </div>
+            <?php 
+                HomeSection::render();
 
-            <div class="header_motivation">
-                <div class="wraper">
-                    <div class="motivation_wrap">
-                        <h2>We Believe Little Things Matter</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptate, optio praesentium. Ex, veniam, harum.</p>
-                    </div>
-                </div>
-            </div>
+                HealthiesSection::render();
 
-            <div class="header_contactUS">
-                <div class="scew_block"></div>
-                <div class="contactUs_wraper">
-                    <div class="working_hours">
-                        <h3>Hours</h3>
-                        <p>Opening: 7:30am — Closing: 9:00pm</p>
-                    </div>
-                    <button class="contactUs_btn" data-btn_scroll_spy_header="#contact_section" type="button">
-                        <span>contact us</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="healthies_wrap">
-                <div class="wraper">
-                    <div class="title_wrap">
-                        <p class="title">Stay Healthy</p>
-                        <h2>Get A Perfect Body</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    </div>
-                    <div class="helthies_list_wrap">
-                        <div class="helthies_list_carousel carousel_animation">
-
-                            <div class="service_wrap ">
-                                <div class="image_wrap">
-                                    <img src="recources\image\2.png" alt="image">
-                                </div>
-                                <div class="description_wrap">
-                                    <h3>
-                                        Be Fit
-                                    </h3>
-                                    <p>
-                                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="service_wrap ">
-                                <div class="image_wrap">
-                                    <img src="recources\image\3.png" alt="image">
-                                </div>
-                                <div class="description_wrap">
-                                    <h3>
-                                        Join Club
-                                    </h3>
-                                    <p>
-                                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="service_wrap ">
-                                <div class="image_wrap">
-                                    <img src="recources\image\4.png" alt="image">
-                                </div>
-                                <div class="description_wrap">
-                                    <h3>
-                                        Gym Fitness
-                                    </h3>
-                                    <p>
-                                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="service_wrap ">
-                                <div class="image_wrap">
-                                    <img src="recources\image\5.png" alt="image">
-                                </div>
-                                <div class="description_wrap">
-                                    <h3>
-                                        Eat Vegie
-                                    </h3>
-                                    <p>
-                                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="service_wrap ">
-                                <div class="image_wrap">
-                                    <img src="recources\image\6.png" alt="image">
-                                </div>
-                                <div class="description_wrap">
-                                    <h3>
-                                        Fruit Juices
-                                    </h3>
-                                    <p>
-                                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="service_wrap ">
-                                <div class="image_wrap">
-                                    <img src="recources\image\1.png" alt="image">
-                                </div>
-                                <div class="description_wrap">
-                                    <h3>
-                                        Body Warmup
-                                    </h3>
-                                    <p>
-                                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                                    </p>
-                                </div>
-                            </div>
-                        
-                        </div>
-                        <div class="switch_btns_wrap">
-                            <div class='switch_wrap abled_btn'><span class='dot_switch active'  id='1'></span></div>
-                            <div class='switch_wrap abled_btn'><span class='dot_switch' id='2'></span></div>
-                            <div class='switch_wrap'><span class='dot_switch' id='3'></span></div>
-                            <div class='switch_wrap'><span class='dot_switch' id='4'></span></div>
-                            <div class='switch_wrap'><span class='dot_switch' id='5'></span></div>
-                            <div class='switch_wrap'><span class='dot_switch' id='6'></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="motivation_wrap">
-                <div class="motivation_img">
-                    <img src="recources/image/bg_2.jpg" alt="image">
-                </div>
-                <div class="motivation_phrase wraper">
-                    <div class="phrase_wrap">
-                        <h2 class="title">Get The Result You Want</h2>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, laudantium quia blanditiis ipsum.</p>
-                    </div>
-                </div>
-            </div>
+                MotivationWidget::render(1);
+                 
+            ?>
 
             <div class="classes_wrap" id="classes_section" data-scroll="#classes_section">
                 <div class="wraper">
@@ -299,17 +140,7 @@
                     
             </div>
 
-            <div class="motivation_wrap">
-                <div class="motivation_img">
-                    <img src="recources/image/bg_3.jpg" alt="image">
-                </div>
-                <div class="motivation_phrase wraper">
-                    <div class="phrase_wrap">
-                        <h2 class="title">Every Step Counts</h2>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ad, reprehenderit enim!</p>
-                    </div>
-                </div>
-            </div>
+            <?php MotivationWidget::render(2); ?>
 
             <div class="shedule_wrap" id="shedule_section" data-scroll="#shedule_section">
 
@@ -1019,18 +850,8 @@
                 </div>
                     
             </div>
-
-            <div class="motivation_wrap">
-                <div class="motivation_img">
-                    <img src="recources/image/bg_1.jpg" alt="image">
-                </div>
-                <div class="motivation_phrase wraper">
-                    <div class="phrase_wrap">
-                        <h2 class="title">Ever You Are</h2>
-                        <p class="description">orem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate distinctio, quasi omnis!</p>
-                    </div>
-                </div>
-            </div>
+            
+            <?php MotivationWidget::render(3); ?>
 
             <div class="trainers_wrap" id="traners_section" data-scroll="#traners_section">
                 <div class="wraper">
@@ -1273,3 +1094,4 @@
     <script src="recources/js/script.js"></script>
 </body>
 </html>
+
