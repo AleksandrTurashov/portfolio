@@ -1,5 +1,5 @@
 
-<div class="video_wrap" id="home_section" data-scroll="#home_section">
+    <div class="video_wrap" id="home_section" data-scroll="#home_section">
         <video autoplay muted loop class="background_video">
             <source src="recources/video/videoplayback.webm" type="video/webm">
         </video>
