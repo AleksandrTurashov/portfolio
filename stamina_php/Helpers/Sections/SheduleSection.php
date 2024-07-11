@@ -1,11 +1,11 @@
 <?php
 
-    require_once('Controllers/IndexController.php');
+    include_once('Controllers/IndexController.php');
 
-    require_once('Helpers/View.php');
+    include_once('Helpers/View.php');
 
-    require_once('Helpers/Widgets/WeekTabWidget.php');
-    require_once('Helpers/Widgets/SheduleWidget.php');
+    include_once('Helpers/Widgets/WeekTabWidget.php');
+    // include_once('Helpers/Widgets/SheduleWidget.php');
 
     class SheduleSection extends View{
 

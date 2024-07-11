@@ -1,7 +1,7 @@
 <?php
 
-    require_once('Controllers/IndexController.php');
-    require_once('Helpers/Widget.php');
+    include_once('Controllers/IndexController.php');
+    include_once('Helpers/Widget.php');
 
     class WeekTabWidget extends Widget {
 

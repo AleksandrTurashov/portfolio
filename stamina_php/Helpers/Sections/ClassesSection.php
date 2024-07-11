@@ -1,10 +1,10 @@
 <?php
 
-    require_once('Controllers/IndexController.php');
+    include_once('Controllers/IndexController.php');
 
-    require_once('Helpers/View.php');
+    include_once('Helpers/View.php');
 
-    require_once('Helpers/Widgets/ClassesWidget.php');
+    include_once('Helpers/Widgets/ClassesWidget.php');
 
     class ClassesSection extends View{
 
