@@ -2,8 +2,8 @@
 
 class Route{
     static function urlParse(){
-        include_once('Controllers/IndexController.php');
+        require_once('Controllers/IndexController.php');
         $obj = new IndexController;
-        $obj->indexaction();
+        $obj->indexAction();
     }
 }
