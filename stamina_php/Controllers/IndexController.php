@@ -1,11 +1,14 @@
 <?php
 
+require_once ("Controller.php");
+
 require_once("Model/Menu.php");
 require_once("Model/Section.php");
 require_once("Model/Motivation.php");
 require_once("Model/Trainer.php");
 require_once("Model/FitnesClass.php");
 require_once("Model/WorkDay.php");
+require_once("Model/Shedule.php");
 
 require_once("Helpers/Widgets/MenuWidget.php");
 require_once("Helpers/Widgets/MotivationWidget.php");
@@ -18,9 +21,6 @@ require_once("Helpers/Sections/TrainersSection.php");
 require_once("Helpers/Sections/ServicesSection.php");
 require_once("Helpers/Sections/ContactSection.php");
 require_once("Helpers/Sections/Footer.php");
-
-
-require_once ("Controller.php");
 
 class IndexController extends Controller{
 
@@ -70,11 +70,11 @@ class IndexController extends Controller{
         return $data;
     }
 
-    // public function sheduleAction(){
+    public function sheduleAction($workDay){
 
-    //     $content = new WorkDay;
-    //     $data = $content->selectWorkDays();
-    //     return $data;
-    // }
+        $content = new Shedule;
+        $data = $content->selectSheduleInfo($workDay);
+        return $data;
+    }
 
 }

@@ -5,7 +5,7 @@
     include_once('Helpers/View.php');
 
     include_once('Helpers/Widgets/WeekTabWidget.php');
-    // include_once('Helpers/Widgets/SheduleWidget.php');
+    include_once('Helpers/Widgets/SheduleWidget.php');
 
     class SheduleSection extends View{
 

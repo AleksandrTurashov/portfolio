@@ -8,20 +8,11 @@
 </head>
 <body>
     <div class="wrap">
-       
-            <?php 
-            MenuWidget::render('sideBarNav'); 
-            ?>
-
+            <?php MenuWidget::render('sideBarNav'); ?>
         <header>
-
-            <?php 
-            MenuWidget::render('mainNav'); 
-            ?>
-
+            <?php MenuWidget::render('mainNav'); ?>
         </header>
         <div class="main_wrap" id="main_content">
-
             <?php 
                 HomeSection::render();
                 HealthiesSection::render();
@@ -34,14 +25,9 @@
                 ServicesSection::render();
                 ContactSection::render();
             ?>
-
         </div>
         <footer id="footer">
-
-            <?php 
-            Footer::render();
-             ?>
-
+            <?php Footer::render(); ?>
         </footer>
     </div>
     <script src="recources/js/script.js"></script>

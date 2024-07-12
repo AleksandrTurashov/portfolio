@@ -4,6 +4,8 @@
 
     include_once('Helpers/View.php');
 
+    include_once('Helpers/Widgets/MenuWidget.php');
+
     class Footer extends View{
 
         static function render(){

@@ -16,7 +16,6 @@
             return $fitnesClasses;
         }
 
-
         public function selectClassesInfo(){
 
             $tranerList = new Trainer;
@@ -57,10 +56,11 @@
                         $data[$i]['class_duration'] = $interval['duration'];
                     }
                 }
+                $data[$i]['id'] = $fitnesClass['id'];
                 $i++;
             }
 
             return $data;
         }
-        
+                
     }
