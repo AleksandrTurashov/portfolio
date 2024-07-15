@@ -1,0 +1,1363 @@
+@font-face{
+	font-family: 'Mulish-Bold';
+	src: url('../fonts/Mulish/Mulish-Black.ttf') format('truetype'),
+		 url('../fonts/Mulish/Mulish-Bold.ttf') format('truetype'),
+         url('../fonts/Mulish/Mulish-ExtraBold.ttf') format('truetype'),
+         url('../fonts/Mulish/Mulish-SemiBold.ttf') format('truetype'),
+}
+@font-face{
+	font-family: 'Mulish-Light';
+	src: url('../fonts/Mulish/Mulish-Light.ttf') format('truetype'),
+		 url('../fonts/Mulish/Mulish-Medium.ttf') format('truetype'),
+         url('../fonts/Mulish/Mulish-Regular.ttf') format('truetype'), 
+}
+html{
+    font-size: 10px;
+    font-family: 'Mulish-Light';
+    color: rgb(0, 0, 0);
+}
+body{
+    margin: 0;
+}
+.wrap{
+    margin: 0 auto;
+    overflow: hidden;
+}
+.wraper{
+    margin: 0 auto;
+    display: flex;
+}
+
+/* header */
+
+.sidebar_menu{
+    width: 300px;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    right: -310px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    transition: right .8s ease-in-out;
+    box-shadow: 4px 0px 20px 5px rgba(0, 0, 0, 0.3);
+    
+    .close_bar_navigation_btn{
+        font-size: 2.5rem;
+        padding: 2rem 3rem;
+        cursor: pointer;
+        color: rgb(152, 152, 152);
+        align-self: flex-end;
+    }
+    .btn_hover{
+        color: rgb(37, 38, 42);
+    }
+    .item_hover{
+        color: rgb(242, 58, 46);
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 80%;
+    }
+    ul > li {
+        width: 100%;
+    }
+
+    ul > li > a{
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: rgb(0, 0, 0);
+        font-size: 1.8rem;
+        padding: 1rem 0 1rem 1rem;
+        width: 100%;
+    }
+    li .active {
+        color: rgb(242, 58, 46);
+        box-sizing: border-box;
+        
+    }
+}
+
+.header_navigation{
+    background: transparent;
+    font-size: 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    .wraper{
+        justify-content: space-between;
+        padding: 2rem 0 1rem 0;
+    }
+    .bar_navigation_btn{
+        cursor: pointer;
+        color:rgb(255, 255, 255);
+    }
+
+    .item_hover{
+        color: rgb(255, 255, 255);
+    }
+
+    ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li a {
+        display: block;
+        padding: 0 1rem 1rem 1rem;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: rgb(255, 255, 255);
+    }
+    .active  {
+        box-sizing: border-box;
+        border-bottom: .1em solid rgb(255, 255, 255);
+    }
+} 
+
+.header_navigation_colored{
+    background-color: #fff;
+    box-shadow: 4px 0px 20px -5px rgba(0, 0, 0, 0.2);
+    transition: background-color .8s ease-in-out;
+    li a {
+        color:rgb(0, 0, 0);
+    }
+    
+    .item_hover{
+        color: rgb(242, 58, 46);
+    }
+    li .active{
+        box-sizing: border-box;
+        border-bottom: .1em solid rgb(242, 58, 46);
+    }
+    .logo > a{
+        color:rgb(0, 0, 0);
+        font-family: 'Mulish-Bold';
+    }
+    .bar_navigation_btn{
+        color:rgb(0, 0, 0);
+    }
+}
+
+.logo > a{
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Mulish-Bold';
+    color: rgb(255, 255, 255);
+}
+
+/* main */
+
+.main_wrap{
+
+    .video_wrap{
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .background_video{
+            min-height: 100vh;
+            width: 100%;
+        }
+    }
+
+    .header_motivation{
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        .wraper{
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 100vh;
+        }
+        .motivation_wrap{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            transform: translate(0, 120%);
+            opacity: 0;
+            transition: all 1s ease .2s;
+        }
+        h2{
+            color: rgb(255, 255, 255);
+            font-size: 6.4rem;
+            font-family: 'Mulish-Bold';
+            text-align: center;
+            width: 90%;
+            margin: 5rem 0;
+        }
+        p{
+            color: rgb(255, 255, 255);
+            font-size: 2.2rem;
+            text-align: center;
+            width: 65%;
+            margin: 0;
+        }
+        .motivation_wrap.active{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+    }
+
+    .header_contactUS{
+        display: flex;
+        position: absolute;
+        left: 0;
+        height: 14rem;
+        width:50%;
+        background-color: rgb(242, 58, 46);
+        margin-top: -7rem;
+        justify-content: center; 
+        
+        .scew_block{
+            width: 5rem;
+            transform: skew(-10deg);
+            height: 100%;
+            position: absolute;
+            background-color: rgb(242, 58, 46);
+            right: -2.5rem;
+        }
+    }
+
+    .motivation_wrap{
+        overflow: hidden;
+
+        .wraper{
+            justify-content: center;
+            align-items: center;
+        }
+        .motivation_img{
+            position: relative;
+            height: 500px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                display: block;
+                width: 100%;
+                height: auto;
+                z-index: -1;
+            }
+        }
+        .motivation_phrase{
+            position: relative;
+            margin-top: -500px;
+            height: 500px;
+            color: rgb(255, 255, 255); 
+        }
+        .title{
+            display: block;
+            width: 100%;
+            text-align: center;
+            height: auto;
+            font-size: 4.8rem;
+            font-family: 'Mulish-Bold';
+        }
+        .description{
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+    .contactUs_wrap,
+    .services_wrap,
+    .trainers_wrap,
+    .shedule_wrap,
+    .classes_wrap{
+        padding: 8rem 0;
+    }
+    .healthies_wrap{ 
+        padding: 20rem 0 8rem 0;
+    }
+
+    .carousel_animation{
+        transition: margin-left 1.4s ease-in-out 0.3s;
+    }
+
+    .contactUs_wrap,
+    .healthies_wrap,
+    .services_wrap,
+    .trainers_wrap,
+    .shedule_wrap,
+    .classes_wrap{
+        background: rgb(255, 255, 255);
+        font-size: 1.8rem;
+        
+        .wraper{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .title_wrap{
+            width: 80%;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h2{
+            color: black;
+            font-size: 3rem;
+            font-family: 'Mulish-Bold';
+        }
+        p{
+            color: rgb(152, 152, 152);
+        }
+        .title{
+            color: rgb(171, 171, 171);
+        }
+    }
+
+    .contactUs_wrap{
+        background: rgb(248, 249, 250);
+    }
+
+    .helthies_list_wrap{
+        width: 1200px;
+        overflow: hidden;
+
+        .helthies_list_carousel{
+            display: flex;
+            width: 2400px;
+            height: 450;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .switch_btns_wrap{
+            display: flex;
+            justify-content: center;
+        }
+
+        .switch_wrap{
+            margin: 1rem 1rem;
+            cursor: pointer;
+            display: none;
+        }
+        .dot_switch{
+            height: 1rem;
+            width: 1rem;
+            background: rgb(204, 204, 204);
+            border-radius: 50%;
+            display: block;
+        }
+        .dot_switch.active{
+            background: rgb(242, 58, 46);
+        }
+        .switch_wrap.abled_btn{
+            display: block;
+        }
+    }
+
+    .services_list_wrap,
+    .trainers_list_wrap,
+    .shedule_week_wrap,
+    .classes_list_wrap{
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        position: static;
+    }
+
+    .class_wrap{
+        border-radius: 3px;
+        background: transparent;
+        display: flex;
+        justify-content: start;
+        box-sizing: border-box;
+        box-shadow: .1rem 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+        width: 49%;
+        margin-bottom: 3rem;
+        position: static;
+
+        img{
+            width: 100%;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .image_wrap{
+            width: 100px;
+            height: 100px;
+            border-radius: 3px 0 0 3px;
+        }
+        .description_wrap{
+            padding-left: 2rem;
+        }
+
+        h3{
+            font-size: 1.8rem;
+            color: rgb(0, 0, 0);
+
+        }
+        span{
+            font-size: 1.6rem;
+            color: rgb(174, 174, 174);
+        }
+    }
+
+    .fitness_class_hover{
+        transform: scale(1.2);
+        transition: all .4s ease-in-out;
+        z-index: 5;
+        background-color:  rgb(242, 58, 46);
+        
+        h3{
+            color: rgb(255, 255, 255);
+        }
+        span{
+            color: rgb(255, 124, 103);
+        }
+    }
+    
+    .week_wrap{
+        margin-bottom: 5rem;
+        width: 100%;
+        
+        ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            justify-content: center;
+
+            li{
+                width: 14%;
+
+                .day_hover,
+                .active{
+                    background:rgb(242, 58, 46);
+                    color: rgb(255, 255, 255);
+                }
+            }
+
+            .day_wrap{
+                text-align: center;
+                display: block;
+                background: rgb(238, 238, 238);
+                font-size: 1.8rem;
+                color: rgb(242, 58, 46);
+                padding: 1.5rem;
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .shedule_week_wrap{
+        display: none;
+    }
+
+    .shedule_week_wrap.active{
+        display: flex;
+    }
+
+    .trainer_wrap{
+        width: 24%;
+        cursor: default;
+        background: transparent;
+
+        .image_wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            width: 100%;
+
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        }
+
+        h3{
+            font-family: 'Mulish-Bold';
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        span{
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Mulish-Bold';
+            color: rgb(204, 204, 204);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        p{
+            text-align: center;
+            color: rgb(152, 152, 152);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .service_wrap{
+        padding: 1.5rem 3rem;
+        width: 320px;
+        margin-bottom: 2rem;
+        cursor: default;
+
+        .image_wrap{
+            display: flex;
+            justify-content: center;
+            height: 120px;
+            width: 100%;
+        }
+
+        .description_wrap{
+            padding: 3rem;
+        }
+
+        h3{
+            text-align: center;
+            font-family: 'Mulish-Bold';
+            font-size: 2rem;
+        }
+        p{
+            text-align: center;
+            color: rgb(152, 152, 152);
+            font-size: 1.8rem;
+        }
+
+    }
+    .service_wrap_hover{
+        box-shadow: 0 0 2rem -.5rem rgba(0, 0, 0, 0.2);
+        transition: box-shadow .4s ease-in-out;
+    }
+
+    .contactForm_wrap{
+        width: 60%;
+        padding-bottom: 5rem;
+        
+        .input_wraper{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: wrap;
+
+            input{
+                width: 48%;
+            }
+        }
+
+        textarea,
+        input{
+            font-family: 'Mulish-Light';
+            width: 100%;
+            color: rgb(73, 80, 87);
+            background: rgb(255, 255, 255);
+            font-size: 1.6rem;
+            box-sizing: border-box;
+            border: .1rem ;
+            border-radius: 0px;
+            padding: .8rem 1.6rem;
+            border: .2rem solid #ced4da;
+            margin-bottom: 2rem;
+        }
+
+        textarea{
+            height: 25rem;
+            resize: vertical;
+            overflow: hidden;
+        }
+        input{
+            height: 5rem;
+        }
+
+        textarea:focus,
+        input:focus{
+            border-color: rgb(242, 58, 46);
+            outline: 0;
+            transition: border-color .4s ease-in-out;
+        }
+        input::placeholder,
+        textarea::placeholder{
+            color: rgb(73, 80, 87);
+        }
+
+        .sendMessage_btn{
+            background: rgb(242, 58, 46);
+            border-radius: .4rem;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            font-family: 'Mulish-Bold';
+            font-size: 1.2rem;
+            width: 45%;
+            padding: 1.6rem;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+       
+    }
+
+    .footer_contactUS{
+        display: flex;
+        position: absolute;
+        right: 0;
+        height: 14rem;
+        width:50%;
+        background-color: rgb(242, 58, 46);
+        margin-top: -7rem;
+        justify-content: center;
+
+        .scew_block{
+            width: 5rem;
+            transform: skew(10deg);
+            height: 100%;
+            position: absolute;
+            background-color: rgb(242, 58, 46);
+            left: -2.5rem;
+
+        }
+    }
+    .contactUs_wraper{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .working_hours{
+        width: 60%;
+
+        h3{
+            font-size: 1.8rem;
+            font-family: 'Mulish-Bold';
+            color: rgb(255, 255, 255);
+        }
+        p{
+            font-size: 1.8rem;
+            color: rgb(255, 255, 255);
+        }
+    }
+
+    .contactUs_btn{
+        width: 14rem;
+        height: 5rem;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        background: hsl(36, 94%, 52%);
+        border-radius: 4px;
+        border: 0;
+        font-family: 'Mulish-Bold';
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        span{
+            padding-right: 1.5rem;
+        }
+    }
+
+    /* animation */
+
+    .animate_title{
+        transform: translate(0, 100%);
+        opacity: 0;
+        transition: transform 1s ease 0s, opacity 0.8s ease 0.4s;
+    }
+    .animate_title.active{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    .animate_item{
+        transform: translate(0, 100%);
+        opacity: 0;
+    }
+    .animate_item.active{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    .trainers_list_wrap{
+        .animate_item.active:nth-child(1){
+            transition: transform 1s ease 0s, opacity 0.8s ease 0.4s;
+        }
+        .animate_item.active:nth-child(2){
+            transition: transform 1s ease 0.2s, opacity 0.8s ease 0.6s;
+        }
+        .animate_item.active:nth-child(3){
+            transition: transform 1s ease 0.4s, opacity 0.8s ease 0.8s;
+        }
+        .animate_item.active:nth-child(4){
+            transition: transform 1s ease 0.6s, opacity 0.8s ease 1s;
+        }
+    }
+    .services_list_wrap{
+        .animate_item.active:nth-child(1){
+            transition: transform 1s ease 0s, opacity 0.8s ease 0.4s;
+        }
+        .animate_item.active:nth-child(2){
+            transition: transform 1s ease 0.2s, opacity 0.8s ease 0.6s;
+        }
+        .animate_item.active:nth-child(3){
+            transition: transform 1s ease 0.4s, opacity 0.8s ease 0.8s;
+        }
+        .animate_item.active:nth-child(4){
+            transition: transform 1s ease 0.0s, opacity 0.8s ease 0.4s;
+        }
+        .animate_item.active:nth-child(5){
+            transition: transform 1s ease 0.2s, opacity 0.8s ease 0.6s;
+        }
+        .animate_item.active:nth-child(6){
+            transition: transform 1s ease 0.4s, opacity 0.8s ease 0.8s;
+        }
+    }
+     
+}
+
+/* footer */
+
+footer{
+    padding: 15rem 0;
+}
+.footer_navigation{
+    background: rgb(255, 255, 255);
+    font-size: 1.8rem;
+
+    .wraper{
+        background: transparent;
+        height: 300px;
+        justify-content: flex-end;
+    }
+    .footer_nav,
+    .footer_about,
+    .footer_subscribe{
+        width: 33.3%;
+        padding: 0 1rem;
+    }
+
+    h4{
+        font-family: 'Mulish-Bold';
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+    }
+    
+    .item_hover{
+        color: rgb(199, 24, 12);
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul > li > a{
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: rgb(242, 58, 46);
+        padding: 0 0 1rem 0;
+    }
+    .footer_nav{
+
+        h4,
+        ul{
+            width: 80%;
+            text-align: center;
+        }
+    }
+
+    .footer_form{
+
+        .form_wrap{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer_input{
+            font-family: 'Mulish-Light';
+            width: 65%;
+            color: rgb(73, 80, 87);
+            background: rgb(255, 255, 255);
+            font-size: 1.6rem;
+            box-sizing: border-box;
+            border: .1rem ;
+            border-radius: 0px;
+            padding: .8rem 1.6rem;
+            border: .2rem solid #ced4da;
+            margin-bottom: 2rem;
+            outline: 0;
+            height: 5rem;
+        }
+        
+        .footer_input:focus{
+            border-color: rgb(242, 58, 46);
+            outline: 0;
+            transition: border-color .4s ease-in-out;
+        }
+
+        .footer_btn{
+            background: rgb(242, 58, 46);
+            border-radius: 0;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            font-family: 'Mulish-Bold';
+            font-size: 1.2rem;
+            width: 35%;
+            padding: 1.6rem;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            height: 5rem;
+        }
+    }
+
+}
+
+/* adaptiv */
+
+@media (min-width: 2200px){
+    .wraper{
+        width: 1200px;
+    }
+
+    /* header */
+    .bar_navigation_btn{
+        display: none;
+    }
+}
+@media (min-width: 1401px)and (max-width: 2300px){
+    .wraper{
+        width: 1200px;
+    }
+
+    /* header */
+    .bar_navigation_btn{
+        display: none;
+    }
+
+     /*main*/
+     .main_wrap{
+        
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+    }
+}
+@media (min-width: 1201px) and (max-width: 1400px){
+    .wraper{
+        width: 1140;
+    }
+
+    .bar_navigation_btn{
+        display: none;
+    }
+
+    /*main*/
+    .main_wrap{
+        
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        .helthies_list_wrap{
+            width: 100%;
+
+            .helthies_list_carousel{
+                width: 2280px;
+            }
+
+            .service_wrap{
+                width: 300px;
+        }
+    }
+        
+        .header_contactUS,
+        .footer_contactUS{
+            width: 80%;
+            
+            .contactUs_wraper{
+                width: 85%;
+            }
+        }
+    
+        .footer_contactUS{
+            width: 80%;
+            
+            .contactUs_wraper{
+                width: 85%;
+            }
+        }
+    }
+}
+@media (min-width: 993px) and (max-width: 1200px){
+    .wraper{
+        width: 93%;
+    }
+    /* header */
+    .bar_navigation_btn{
+        display: none;
+    }
+    /* main */
+    .main_wrap{
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        .helthies_list_wrap{
+            width: 860;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2580px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 1.5rem;
+                width: 400px;
+            }
+        }.motivation_wrap{
+            .motivation_img{
+                height: 400px;
+                width: 150%;
+                left: -25%;
+            }
+        }
+        .trainers_list_wrap,
+        .services_list_wrap,
+        .shedule_week_wrap,
+        .classes_list_wrap{
+            width: 90%;
+
+            .class_wrap{
+                width: 100%;
+            }
+        }  
+        .services_list_wrap{
+            .service_wrap{
+                width: 48%;
+                padding: 0;
+            }
+        }
+        
+        .trainer_wrap{
+            width: 48%;
+        }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 90%;
+
+            .contactUs_wraper{
+                width: 85%;
+            }
+        }
+
+    }
+}
+@media (min-width: 767px) and (max-width: 992px){
+    .wraper{
+        float: none;
+        width: 85%;
+    }
+    /* header */
+    .main_nav{
+        display: none;
+    }
+    .bar_navigation_btn{
+        display: block;
+    }
+    /* main */
+    .main_wrap{
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        .header_motivation{
+            h2{
+                font-size: 3.2rem;
+                width: 85%;
+            }
+            p{
+                width: 85%;
+            }
+        }
+        .motivation_wrap{
+            .motivation_img{
+                height: 400px;
+                width: 150%;
+                left: -25%;
+            }
+
+            .title{
+                font-size: 3.2rem;
+            }        
+            .motivation_phrase{
+                margin-top: -400px;
+                height: 400px;
+            }
+        }
+        .helthies_list_wrap{
+            width: 480;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2880px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 3rem;
+                width: 420px;
+            }
+        }
+
+        .trainers_list_wrap,
+        .services_list_wrap,
+        .shedule_week_wrap,
+        .classes_list_wrap{
+            width: 90%;
+
+            .class_wrap{
+                width: 100%;
+            }
+        } 
+        .services_list_wrap{
+            .service_wrap{
+                width: 48%;
+                padding: 0;
+            }
+        }
+        .trainer_wrap{
+            width: 48%;
+        }
+        .contactForm_wrap{
+            width: 90%;
+        }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 70%;
+            height: 20rem;
+            margin-top: -10rem;
+            justify-content: center;
+
+            .contactUs_wraper{
+                width: 85%;
+                align-items: center;
+            }
+            .working_hours{
+                width: 80%;
+            }
+            .contactUs_btn{
+                width: 80%;
+            }
+        }
+    }
+    /* footer */
+    .footer_navigation{
+        .wraper{
+            flex-direction: column;
+            height: auto;
+            width: 85%;
+        }
+        .footer_subscribe,
+        .footer_nav,
+        .footer_about{
+            width: 95%;
+        }
+        .footer_nav{
+
+            h4,
+            ul{
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 768px){
+    .wraper{
+        float: none;
+        width: 90%;
+    }
+    /* header */
+    .main_nav{
+        display: none;
+    }
+    .bar_navigation_btn{
+        display: block;
+    }
+    /* main */
+    .main_wrap{
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        .header_motivation{
+            h2{
+                font-size: 3.2rem;
+                width: 90%;
+            }
+            p{
+                width: 90%;
+            }
+        }
+        
+        .motivation_wrap{
+            .motivation_img{
+                height: 350px;
+                width: 150%;
+                left: -25%;
+            }
+            .title{
+                font-size: 3.2rem;
+            }       
+            .motivation_phrase{
+                margin-top: -350px;
+                height: 350px;
+            }
+        }
+        .helthies_list_wrap{
+            width: 480;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2880px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 3rem;
+                width: 420px;
+            }
+        }
+        .trainers_list_wrap, 
+        .services_list_wrap,
+        .shedule_week_wrap,
+        .classes_list_wrap{
+            width: 90%;
+
+            .class_wrap{
+                width: 100%;
+            }
+        } 
+        .service_wrap{
+            width: 90%;
+        }
+        .trainer_wrap{
+            width: 90%;
+        }
+        .contactForm_wrap{
+            width: 80%;
+
+            .sendMessage_btn{
+                width: 100%;
+            }
+            .input_wraper input{
+                width: 100%;
+            }
+        }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 90%;
+            height: 20rem;
+            margin-top: -10rem;
+            justify-content: center;
+
+            .contactUs_wraper{
+                width: 85%;
+                align-items: center;
+            }
+            .working_hours{
+                width: 90%;
+            }
+            .contactUs_btn{
+                width: 90%;
+            }
+        }
+
+    }
+
+    /* footer */
+    .footer_navigation{
+        .wraper{
+            flex-direction: column;
+            height: auto;
+            width: 85%;
+        }
+        .footer_subscribe,
+        .footer_nav,
+        .footer_about{
+            width: 95%;
+        }
+        .footer_nav{
+
+            h4,
+            ul{
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+}
+@media (max-width: 575px){
+    .wraper{
+        float: none;
+        width: 90%;
+    }
+    /* header */
+    .main_nav{
+        display: none;
+    }
+    .bar_navigation_btn{
+        display: block;
+    }
+    /* main */
+    .main_wrap{
+        .video_wrap{
+            .background_video{
+                height: 100vh;
+                width: auto;
+            }
+        }
+        .header_motivation{
+            h2{
+                font-size: 3.2rem;
+                width: 95%;
+            }
+            p{
+                width: 95%;
+            }
+        }
+        .motivation_wrap{
+
+            .motivation_img{
+                height: 300px;
+                width: 150%;
+                left: -25%;
+            }
+            
+            .title{
+                font-size: 3.2rem;
+            }
+            .motivation_phrase{
+                margin-top: -300px;
+                height: 300px;
+            }
+            
+        }
+        .helthies_list_wrap{
+            width: 480;
+
+            .helthies_list_carousel{
+                display: flex;
+                width: 2880px;
+                justify-content: space-around;
+            }
+            .service_wrap{
+                margin: 3rem;
+                width: 420px;
+            }
+        }
+        .trainers_list_wrap,
+        .services_list_wrap,
+        .shedule_week_wrap,
+        .classes_list_wrap{
+            width: 90%;
+
+            .class_wrap{
+                width: 100%;
+            }
+        }
+        .service_wrap{
+            width: 100%;
+        }
+        .trainer_wrap{
+            width: 90%;
+        }
+        .contactForm_wrap{
+            width: 95%;
+
+            .sendMessage_btn{
+                width: 100%;
+            }
+            .input_wraper input{
+                width: 100%;
+            }
+        }
+        .header_contactUS,
+        .footer_contactUS{
+            width: 100%;
+            height: 20rem;
+            margin-top: -10rem;
+
+            .contactUs_wraper{
+                width: 100%;
+                justify-content: center;
+            }
+
+            .working_hours{
+                width: 90%;
+            }
+            .contactUs_btn{
+                width: 90%;
+            }
+            .scew_block{
+                display: none;
+            }
+        }
+
+    }
+
+    /* footer */
+    .footer_navigation{
+        .wraper{
+            flex-direction: column;
+            height: auto;
+            width: 85%;
+        }
+        .footer_subscribe,
+        .footer_nav,
+        .footer_about{
+            width: 95%;
+        }
+        .footer_nav{
+
+            h4,
+            ul{
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+}

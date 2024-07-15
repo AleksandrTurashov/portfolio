@@ -94,12 +94,16 @@ for (let navItem of main_navItems){
             addSwitchesDots(quantity);
             let active_btn = document.querySelector(".dot_switch.active");
             
+<<<<<<< HEAD
             if((active_btn.id/2) >= 2.5){
                 active_btn.classList.remove("active");
                 btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
                 btns[2].classList.add("active");
             }
             else if((active_btn.id/2) == 2){
+=======
+            if((active_btn.id/2) >= 2){
+>>>>>>> data_base
                 active_btn.classList.remove("active");
                 btns = document.querySelectorAll(".switch_wrap.abled_btn .dot_switch");
                 btns[1].classList.add("active");
