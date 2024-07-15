@@ -6,7 +6,10 @@
                 <h2><?php echo $data[0]['title'] ?></h2>
                 <p><?php echo $data[0]['description'] ?></p>
             </div>
-            <div class="helthies_list_wrap">
+
+            <?php HealthiesCarousellWidget::render(); ?>
+
+            <!-- <div class="helthies_list_wrap">
                 <div class="helthies_list_carousel carousel_animation">
 
                     <div class="service_wrap ">
@@ -97,6 +100,6 @@
                     <div class='switch_wrap'><span class='dot_switch' id='5'></span></div>
                     <div class='switch_wrap'><span class='dot_switch' id='6'></span></div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>

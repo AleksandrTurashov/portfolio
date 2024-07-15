@@ -9,6 +9,7 @@ require_once("Model/Trainer.php");
 require_once("Model/FitnesClass.php");
 require_once("Model/WorkDay.php");
 require_once("Model/Shedule.php");
+require_once("Model/Service.php");
 
 require_once("Helpers/Widgets/MenuWidget.php");
 require_once("Helpers/Widgets/MotivationWidget.php");
@@ -74,6 +75,13 @@ class IndexController extends Controller{
 
         $content = new Shedule;
         $data = $content->selectSheduleInfo($workDay);
+        return $data;
+    }
+
+    public function serviceAction(){
+
+        $content = new Service;
+        $data = $content->selectServiceContent();
         return $data;
     }
 

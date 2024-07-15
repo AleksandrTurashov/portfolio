@@ -4,6 +4,8 @@
 
     include_once('Helpers/View.php');
 
+    include_once('Helpers/Widgets/HealthiesCarousellWidget.php');
+
     class HealthiesSection extends View{
 
         static function render(){

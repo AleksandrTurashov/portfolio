@@ -7,9 +7,9 @@
 
         static function render(){
 
-            $menu_list = new IndexController;
+            $days = new IndexController;
 
-            $data = $menu_list->workDaysAction();
+            $data = $days->workDaysAction();
 
             Widget::pathIncludeWidget('weekTab', $data);
         }

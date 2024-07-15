@@ -4,6 +4,8 @@
 
     include_once('Helpers/View.php');
 
+    include_once('Helpers/Widgets/ServicesListWidget.php');
+
     class ServicesSection extends View{
 
         static function render(){
