@@ -23,6 +23,45 @@ class AdminController extends Controller{
         Controller::render('admin/adminTrainerList', $data, 'defaultAdmin');
     }
 
+    public function trainerInfoAction(){
+
+        if(isset($_GET['id'])){
+            $trainer = new Trainer;
+            $data = $trainer -> selectTrainerInfo($_GET['id']);
+
+            if(!empty($data))
+                Controller::render('admin/adminTrainerEdit', $data, 'defaultAdmin');
+            else
+                Controller::error404();
+        }
+        else{
+            Controller::error404();
+        }
+    }
+
+    public function trainerEditAction($data){
+        if(strlen($data['name']) < 20 && strlen($data['name']) > 3 && strlen($data['description']) < 120 && strlen($data['description']) > 10 &&
+            strlen($data['surname']) < 20 && strlen($data['surname']) > 3 
+            ){
+            $trainer = new Trainer;
+            $request = $trainer->updateTrainer($data);
+            
+            if(
+                isset($request['name']) && $request['name']=='error' ||
+                isset($request['description']) && $request['description']=='error' ||
+                isset($request['surname']) && $request['surname']=='error'
+            ){
+                header("location: ?route=admin/trainerInfo&id=".$data['id']."&request=error");
+            }
+            else if(!isset($request['name']) && !isset($request['description']) && !isset($request['surname'])){
+                header("location: ?route=admin/trainerInfo&id=".$data['id']);
+            }
+            else {
+                header("location: ?route=admin/trainers&request=success");
+            }
+        }
+    }
+
     public function fitnesClassesAction(){
         $fitnesClassList = new FitnesClass;
         $data = $fitnesClassList -> selectClassesInfo();
@@ -56,11 +95,13 @@ class AdminController extends Controller{
             $service = new Service;
             $request = $service->updateService($data);
            
-            if(
-                isset($request['item']) && $request['item']=='error' ||
+            if(isset($request['item']) && $request['item']=='error' ||
                 isset($request['description']) && $request['description']=='error'
             ){
                 header("location: ?route=admin/serviceInfo&id=".$data['id']."&request=error");
+            }
+            else if(!isset($request['item']) && !isset($request['description'])){
+                header("location: ?route=admin/serviceInfo&id=".$data['id']);
             }
             else{
                 header("location: ?route=admin/services&request=success");
@@ -105,6 +146,9 @@ class AdminController extends Controller{
             ){
                 header("location: ?route=admin/sectionInfo&id=".$data['id']."&request=error");
             }
+            else if(!isset($request['title']) && !isset($request['description']) && !isset($request['sm_title'])){
+                header("location: ?route=admin/sectionInfo&id=".$data['id']);
+            }
             else {
                 header("location: ?route=admin/sections&request=success");
             }
@@ -117,4 +161,39 @@ class AdminController extends Controller{
         Controller::render('admin/adminMotivationList', $data, 'defaultAdmin');
     }
 
+    public function motivationInfoAction(){
+
+        if(isset($_GET['id'])){
+            $motivation = new Motivation;
+            $data = $motivation -> selectMotivationContent($_GET['id']);
+
+            if(!empty($data))
+                Controller::render('admin/adminMotivationEdit', $data, 'defaultAdmin');
+            else
+                Controller::error404();
+        }
+        else{
+            Controller::error404();
+        }
+    }
+
+    public function motivationEditAction($data){
+        if(strlen($data['theme']) < 40 && strlen($data['theme']) > 3 && strlen($data['description']) < 120 && strlen($data['description']) > 10){
+            $motivation = new Motivation;
+            $request = $motivation->updateMotivation($data);
+            print_r($request);
+            if(
+                isset($request['theme']) && $request['theme']=='error' ||
+                isset($request['description']) && $request['description']=='error' 
+            ){
+                header("location: ?route=admin/motivationInfo&id=".$data['id']."&request=error");
+            }
+            else if(!isset($request['theme']) && !isset($request['description'])){
+                header("location: ?route=admin/motivationInfo&id=".$data['id']);
+            }
+            else {
+                header("location: ?route=admin/motivation&request=success");
+            }
+        }
+    }
 }

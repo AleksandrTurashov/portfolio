@@ -16,7 +16,8 @@ html{
     font-family: 'Mulish-Light';
     color: rgb(0, 0, 0);
 }
-
+.motivation-section,
+.trainerEdit,
 .trainer-section,
 .sectionEdit,
 .section-list,
@@ -24,6 +25,7 @@ html{
 .services-section{
     margin-top: 3rem;
 }
+.motivation-section .edit-line, 
 .trainer-section .edit-line,   
 .section-list .edit-line,
 .services-section .edit-line{
@@ -40,6 +42,14 @@ html{
 
     i{
         display: block;
+    }
+}
+
+.motivation-card{
+    margin-bottom: 2rem;
+
+    .edit-line{
+        margin-left: 3rem;
     }
 }
 

@@ -1,5 +1,12 @@
 
     <div class="container trainer-section">
+
+    <?php if(isset($_GET['request']) && $_GET['request'] == 'success'): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success! Trainer chenged.</strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
         <div class="row">
             <table class="table table-hover">
                 <thead>
@@ -18,7 +25,7 @@
                             <td><?php echo $trainer['name']; ?></td>
                             <td><?php echo $trainer['surname']; ?></td>
                             <td><?php echo $trainer['description']; ?></td>
-                            <td><a href="<?php echo 'http://'.HOST.'/'.PREF.'?route=admin/sectionInfo&id='.$section['id'] ?>" class="edit-line"><i class="fa-solid fa-pencil"></i></a></td>
+                            <td><a href="<?php echo 'http://'.HOST.'/'.PREF.'?route=admin/trainerInfo&id='.$trainer['id'] ?>" class="edit-line"><i class="fa-solid fa-pencil"></i></a></td>
                         </tr>
                     <?php endforeach ?>
                     

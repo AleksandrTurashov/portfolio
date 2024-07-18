@@ -19,13 +19,13 @@
             <form class="row g-3" method="post" action="?route=admin/sectionInfo&id=<?php echo $data[0]['id']?>">
                 <input type="hidden" name="id" value="<?php echo $data[0]['id']?>">
                 <div class="col-md-6">
-                    <label for="inputName" class="form-label">title</label>
-                    <input type="text" class="form-control" id="inputName" name="title" value="<?php echo $data[0]['title']?>">
+                    <label for="inputTitle" class="form-label">title</label>
+                    <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $data[0]['title']?>">
                 </div>
                 <?php if($data[0]['sm_title'] != null): ?> 
                     <div class="col-md-6">
-                        <label for="inputName" class="form-label">small title</label>
-                        <input type="text" class="form-control" id="inputName" name="sm_title" value="<?php echo $data[0]['sm_title']?>">
+                        <label for="inputSmallTitle" class="form-label">small title</label>
+                        <input type="text" class="form-control" id="inputSmallTitle" name="sm_title" value="<?php echo $data[0]['sm_title']?>">
                     </div>
                 <?php endif; ?>
                 <div class="col-md-9">
