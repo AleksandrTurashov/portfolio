@@ -11,5 +11,13 @@
             $data = $this->getData($sql);
             return $data;
         }
+
+        public function selectMotivationInfo(){
+            
+            $sql = "SELECT * FROM `motivation`";
+            if(!$this->statusRequest($sql)) return "request: 500";
+            $data = $this->getData($sql);
+            return $data;
+        }
         
     }
